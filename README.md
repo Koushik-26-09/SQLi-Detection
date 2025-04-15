@@ -55,3 +55,20 @@ A neural network to reduce input features from 544 to a compressed representatio
 ```python
 Input -> Dense(128, relu) -> Dense(64, relu)  ← Encoder  
        -> Dense(128, relu) -> Dense(544, linear) ← Decoder
+# Re-creating the README.md file since the code execution environment has been reset.
+
+readme_content = """
+### 🔹 Classifier:
+
+- XGBoost model is trained on encoded features to predict malicious (1) or safe (0).
+
+---
+
+## 🔍 Model Evaluation
+
+- **Accuracy**: ~99.5% on validation data
+- **Confusion Matrix**
+- **Classification Report**
+- **Loss Graph** (for autoencoder)
+
+### Example Output:
