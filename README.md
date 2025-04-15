@@ -55,7 +55,7 @@ A neural network to reduce input features from 544 to a compressed representatio
 ```python
 Input -> Dense(128, relu) -> Dense(64, relu)  ← Encoder  
        -> Dense(128, relu) -> Dense(544, linear) ← Decoder
-# Re-creating the README.md file since the code execution environment has been reset.
+```
 
 
 ### 🔹 Classifier:
@@ -110,7 +110,17 @@ query = "SELECT * FROM users WHERE username='admin' --'"
 ```
 
 ---
+## 🖥️ Gradio Interface (Demo UI)
+ We created a simple and interactive Gradio-based Web UI to test SQL queries for potential SQL injection threats in real-time.
 
+**🔧 How it Works**
+- You enter a SQL query.
+- **The backend:**
+- Converts it to TF-IDF vector.
+- Applies the trained autoencoder for compression.
+- Classifies it using XGBoost.
+
+The prediction result is instantly displayed as "Malicious" or "Safe".
 ## 🧠 Key Learnings
 
 - How autoencoders can compress high-dimensional textual features.
@@ -159,11 +169,6 @@ jupyter notebook main_notebook.ipynb
 
 ---
 
-## 📌 Future Work
-
-- Use deep learning models like LSTM or BERT for sequence learning.
-- Create a Streamlit or Flask web app for real-time prediction.
-- Add support for detecting other types of web attacks (XSS, CSRF).
 
 ---
 
@@ -186,6 +191,6 @@ Special thanks to the community for tools like Scikit-learn, Keras, and XGBoost.
 
 ## 📃 License
 
-This project is licensed under the MIT License.
+
 
 ---
