@@ -57,7 +57,7 @@ Input -> Dense(128, relu) -> Dense(64, relu)  ← Encoder
        -> Dense(128, relu) -> Dense(544, linear) ← Decoder
 # Re-creating the README.md file since the code execution environment has been reset.
 
-readme_content = """
+
 ### 🔹 Classifier:
 
 - XGBoost model is trained on encoded features to predict malicious (1) or safe (0).
@@ -72,3 +72,120 @@ readme_content = """
 - **Loss Graph** (for autoencoder)
 
 ### Example Output:
+```
+Train Accuracy: 0.9978
+Validation Accuracy: 0.9957
+Confusion Matrix:
+ [[4082    3]
+  [  35 4666]]
+```
+
+---
+
+## 📊 Visualizations
+
+- Training vs Validation Loss for Autoencoder
+- Confusion Matrix heatmap
+- ROC Curve (optional extension)
+
+---
+
+## 🔐 Why ML for SQLi?
+
+> Traditional rule-based methods (like `if-else` checks) are limited.
+
+Machine Learning:
+
+- **Learns patterns** from real malicious and safe queries
+- **Generalizes** to detect new, unseen SQLi attacks
+- Works well even if attacker slightly **modifies query**
+
+---
+
+## 💬 Sample Prediction
+
+```python
+query = "SELECT * FROM users WHERE username='admin' --'"
+# Output: Prediction: 1 (SQL Injection)
+```
+
+---
+
+## 🧠 Key Learnings
+
+- How autoencoders can compress high-dimensional textual features.
+- Use of TF-IDF in cybersecurity context.
+- How to combine unsupervised and supervised learning for anomaly detection.
+- Real-world implications of data preprocessing and feature engineering.
+
+---
+
+## 📂 Folder Structure
+
+```
+SQLi-Detection-ML/
+├── data/
+│   └── sql_queries.csv
+├── models/
+│   ├── autoencoder_model.h5
+│   └── xgboost_model.pkl
+├── images/
+│   └── loss_graph.png
+├── main_notebook.ipynb
+└── README.md
+```
+
+---
+
+## 🧪 How to Run
+
+1. Clone this repository:
+
+```bash
+git clone https://github.com/your-username/sqli-detection-ml.git
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Run the notebook:
+
+```bash
+jupyter notebook main_notebook.ipynb
+```
+
+---
+
+## 📌 Future Work
+
+- Use deep learning models like LSTM or BERT for sequence learning.
+- Create a Streamlit or Flask web app for real-time prediction.
+- Add support for detecting other types of web attacks (XSS, CSRF).
+
+---
+
+## 🙌 Acknowledgements
+
+Thanks to open datasets and resources that helped in making this project.  
+Special thanks to the community for tools like Scikit-learn, Keras, and XGBoost.
+
+---
+
+## 🧑‍💻 Author
+
+**Koushik Samudrala**  
+🎓 B.Tech CSE @ SASTRA University  
+💡 Passionate about Web Security, AI, and Software Development  
+🌍 Goal: Travel the world 🌏  
+📫 LinkedIn | GitHub
+
+---
+
+## 📃 License
+
+This project is licensed under the MIT License.
+
+---
